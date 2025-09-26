@@ -4,7 +4,7 @@ import java.io.IOException;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Activitat_100 {
     public static void main(String[] args) {
         crearDir("E:/test");
     }
@@ -39,16 +39,31 @@ public class Main {
         }
     }
 
-    public static void escriuArxiu(String dir, String nom, String cont) {
+    public static boolean escriuArxiu(String dir, String nom, String cont) {
         File arxiu = new File(dir, nom);
+        FileWriter escritor = null;
+
         try {
-            FileWriter escritor = new FileWriter(arxiu);
+            escritor = new FileWriter(arxiu);
+
             escritor.write(cont);
             escritor.close();
             System.out.println("El contenido se escribió correctamente en el archivo");
+            
+            return true;
         } catch (IOException e) {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
-
+            return false;
+        } finally {
+            try {
+                if (escritor != null) {
+                    escritor.close();
+                    
+                    return true;
+                }
+            } catch (IOException e) {
+                return false;
+            }
         }
     }
 
