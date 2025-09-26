@@ -2,8 +2,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// Activitat 1.00 : Manipulació d'arxius i directoris
 public class Activitat_100 {
     public static void main(String[] args) {
         crearDir("E:/test");
