@@ -4,4 +4,6 @@
 // branca treball
 
 public class CodiAlumne {
+
+    //Posa codi aqui.
 }
